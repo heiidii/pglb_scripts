@@ -45,6 +45,17 @@ def write_readable_lists_pdbnumbering(positions_dict, filename):
   outf.write('%s,%s\n' %(key,','.join(pdb_numbering)))
  outf.close()
 
+def write_aligned_aas(positions_dict, filename, width=40, range_sel=[300, 330]):
+ outf=open(filename,'w')
+ outf.write('\n')
+ outf.write(f'%30s\t%s\t%{width-5}s\n' %('',f'{range_sel[0]}',f'{range_sel[1]}'))
+ for key in positions_dict:
+  pdb_numbering = ['{}'.format(t[0]) for t in positions_dict[key]]
+  outf.write(f'%30s\t%{width}s\n' %(key,''.join(pdb_numbering)))
+  print(f'%30s' %(key))
+ outf.write('\n')
+ outf.close()
+
 def column_to_sequence(n_col,align,name, include_aa=False):
   align_array = np.array([list(rec) for rec in align], np.character)
   rows= [i for i in range(len(align)) if str(align[i].id)==name]
@@ -154,7 +165,8 @@ def get_positions_selection(alignment_file,
   dict_pos =  get_positions(alignment_file,
                         lookup_pos=lookup_pos,
                         ref=ref)
-  write_readable_lists(dict_pos, f'{outdir}/{outfile_basename}.txt')
+  write_readable_lists(dict_pos, f'{outdir}/{outfile_basename}.txt') 
+  
 
 
 def get_positions_selection_for_TIXE(alignment_file,
@@ -174,10 +186,43 @@ def get_positions_selection_for_TIXE(alignment_file,
   write_readable_lists(dict_pos, f'{outdir}/{outfile_basename}.txt')  
 
 
+def get_positions_selection_range(alignment_file,
+                                  outdir='./',
+                                  range_sel=[300, 330],
+                                  outfile_basename='aligned_positions_selection_tixe_range',
+                                  ref='Clar',
+                                  ):
+  positions_pdbnum = [t for t in range(range_sel[0], range_sel[1]+1)]
+  lookup_pos = [t-1 for t in positions_pdbnum]
+  dict_pos =  get_positions(alignment_file,
+                        lookup_pos=lookup_pos,
+                        ref=ref, include_aa=True)
+  
+  write_aligned_aas(dict_pos,f'{outdir}/{outfile_basename}_pdbnum.txt', range_sel=range_sel,
+                    width=(range_sel[1]-range_sel[0]+1))
+
+
+def write_all_alignments(alignment_file, outdir='.'):
+  ranges = [[40,70],[140,170],[300,330],[455,485], [560,590]]
+  for range_tuple in ranges:
+    r1, r2 = range_tuple[0], range_tuple[1]
+    get_positions_selection_range(alignment_file=alignment_file,
+                          outdir=outdir,
+                          range_sel=[r1, r2],
+                          outfile_basename=f'aligned_range_{r1}-{r2}',
+                          ref='ClPglB')
+    
+
+
 if __name__=='__main__':
  
- outdir='aligned_positions'
+ outdir='aligned_positions_ranges'
  os.makedirs(outdir, exist_ok=True)
- get_positions_selection(alignment_file='Sequences_all_for_alignment.aln',
-                         outdir=outdir,
-                         ref='Campylobacter_lari')
+ #get_positions_selection(alignment_file='Sequences_all_for_alignment.aln',
+ #                        outdir=outdir,
+ #                        ref='Campylobacter_lari')
+ #get_positions_selection_range(alignment_file='data/Sequences_all_for_alignment.aln',
+ #                        outdir=outdir,
+ #                        ref='Campylobacter_lari')
+ write_all_alignments(alignment_file='data/Sequences_all_for_alignment_named_subset.aln',
+                      outdir=outdir)

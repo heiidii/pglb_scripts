@@ -1,0 +1,14 @@
+
+                              	560	                       590
+                       HsSTT3A	-------------------SSDDINKFH-IK
+                       HsSTT3B	-------------------SGDDINKFD-IR
+                       AtSTT3B	-------------------SSDDINKFV-IK
+                       AtSTT3A	-------------------PSDDINKFH-IK
+                       LmSTT3D	-------------------QSGDLMKSC-PD
+                        LdSTT3	-------------------QSGDLMKSC-PH
+                        ClPglB	RDVYIYMPYRMLRIMPVVAQFANTNPDNGEQ
+                        CjPglB	RDIYLYMPARMSLIFSTVASFSFINLDTGVL
+                        DgPglB	APRY------------VVATFENIRLAQGLH
+                        DmPglB	MPLY------------VVATFENIRLSQGVH
+                        DiPglB	TSQY------------VVATFENIRLSKGVH
+

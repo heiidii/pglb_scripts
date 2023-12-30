@@ -1,0 +1,14 @@
+
+                              	40	                        70
+                       HsSTT3A	YR-----T--TRFLAEEGFYKFYPLGRIIGG
+                       HsSTT3B	YR-----S--THHLASHGFYEFYPLGRIVGG
+                       AtSTT3B	YR-----T--TLFLTEKGFYEFYPLGRIIGG
+                       AtSTT3A	YR-----V--TQFLSKNGIYEFYPLGRVIGG
+                       LmSTT3D	YR-----A--AEYMSTHGWSAFYPLGRPVGS
+                        LdSTT3	YR-----A--AEYMSTHGWSAFYPLGRPVGS
+                        ClPglB	SEFYEFFFNDQLMITTNDGYAFAEGARDMIA
+                        CjPglB	SEFNEYFFNNQLMIISNDGYAFAEGARDMIA
+                        DgPglB	NP--ALVVDGEFIQGTHDSYHWLAGAKGVGE
+                        DmPglB	QP--AYRVAGEFIMGTHDAYHWLAGAMGFGS
+                        DiPglB	QE--AYKVAGEFIMGTHDAYHWLAGALGFGT
+

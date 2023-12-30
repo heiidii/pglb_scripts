@@ -1,0 +1,14 @@
+
+                              	300	                       330
+                       HsSTT3A	-SLLDPSYAKNNIPIIASVSEHQPTTWSSYY
+                       HsSTT3B	-SLWDTGYAKIHIPIIASVSEHQPTTWVSFF
+                       AtSTT3B	-SLLDPTYAKDHIPIIASVSEHQPTAWSSFM
+                       AtSTT3A	-SLLDPTYASKYIPIIASVSEHQPPTWPSYF
+                       LmSTT3D	-ALFVEH-TRTGNPLVDSVAEHQPASPEAMW
+                        LdSTT3	-ALFVEH-TRTGNPLVDSVAEHHPADALAYL
+                        ClPglB	DVQNLKDAAFMYFNVNETIMEVNTIDPEVFM
+                        CjPglB	ESANLT-QGFMYFNVNQTIQEVENVDLSEFM
+                        DgPglB	DS--VNTTGVIYPGIGQSVIEVQNIALERVL
+                        DmPglB	QFRGD-TGELVFPGIGQSVIEAQNLPLAEVF
+                        DiPglB	QFRGREVGELVFPGIGQSVIEAQNLPLAEVF
+
